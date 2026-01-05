@@ -13,29 +13,42 @@
                 <lightning-input 
                 type="number" 
                 name="devFundamentals" 
-                label="Developer Fundamentals: 23%" 
+                label={devFundamentalOutline}
+                placeholder="enter section-level score"
                 value={devFundamentalScore}
+                min="0"
+                max="100"
+                step="1"
                 onchange={handleChange}
             ></lightning-input>
                 <lightning-input 
                 type="number" 
                 name="processAuto" 
-                label="Process Automation: 30%"
+                label={processAutoOutline}
                 value={processAutoScore}
+                min="0"
+                max="100"
+                step="1"
                 onchange={handleChange}
             ></lightning-input>
                 <lightning-input 
                 type="number" 
                 name="userInterface" 
-                label="User Interface: 25%"
+                label={userInterfaceOutline}
                 value={userInterfaceScore}
+                min="0"
+                max="100"
+                step="1"
                 onchange={handleChange}
             ></lightning-input>
                 <lightning-input 
                 type="number" 
                 name="testDebugDeploy" 
-                label="Testing, Debugging, and Deployment: 22%" 
+                label={testDebugDeployOutline}  
                 value={testDebugDeployScore}
+                min="0"
+                max="100"
+                step="1"
                 onchange={handleChange}
             ></lightning-input>
             </div>
@@ -50,7 +63,7 @@
                         <lightning-tab label={attempt.Id}>
                             <c-score-information
                             score={attempt.Score}
-                            attempt-id={attempt.Id}
+                            attempt-id={attempt.Id}                            
                             number-of-questions={numberOfQuestions} 
                             ondeleteattempt={deleteAttemptHandler}
                             ></c-score-information>
@@ -58,22 +71,22 @@
                     </div>
                     </lightning-tabset>
                 </div>
-            <template lwc:if={showResources}>
+                <template lwc:if={showResources}>
                 <ul class="slds-text-align_left slds-text-heading_small slds-p-top_medium">
                 <li class="slds-text-title_bold resourceLi">
                     Resources:
                 </li>
                 <li>
-                    <a href="">PD1 Exam Guide</a>
+                    <a href="https://trailhead.salesforce.com/help?article=Salesforce-Certified-Platform-Developer-Exam-Guide">PD1 Exam Guide</a>
                 </li>
                 <li>
-                    <a href="">Focus on Force</a>
+                    <a href="https://focusonforce.com/catalog/">Focus on Force</a>
                 </li>
                 <li>
-                    <a href="">Lighting Challenge</a>
+                    <a href="https://www.lightningchallenges.com/">Lighting Challenge</a>
                 </li>
                 <li>
-                    <a href="">Salesforce Mentor</a>
+                    <a href="https://certifyforce.vercel.app/">Certifyforce</a>
                 </li>
             </ul>
             </template>
